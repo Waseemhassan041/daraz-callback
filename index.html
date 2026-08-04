@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Daraz Callback</title>
-</head>
+<head><title>Daraz Callback</title></head>
 <body>
-<h2>Authorizing...</h2>
-<p>Redirecting back to the app, please wait.</p>
+<p>Redirecting back to the app, please wait...</p>
 <script>
-    var params = new URLSearchParams(window.location.search);
-    var code = params.get("code");
-    if (code) {
-        window.location.href = "darazclaimstracker://callback?code=" + encodeURIComponent(code);
-    } else {
-        document.body.innerHTML = "<h2>Authorization failed</h2><p>No code received.</p>";
-    }
+  const params = window.location.search;
+  window.location.href = "sellerhubclone://oauth-callback" + params;
 </script>
 </body>
 </html>
